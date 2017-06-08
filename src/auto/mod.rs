@@ -4,8 +4,14 @@
 mod key_file;
 pub use self::key_file::KeyFile;
 
+#[cfg(feature = "v2_40")]
+mod variant_dict;
+#[cfg(feature = "v2_40")]
+pub use self::variant_dict::VariantDict;
+
 mod enums;
 pub use self::enums::KeyFileError;
+pub use self::enums::OptionArg;
 
 mod flags;
 pub use self::flags::FormatSizeFlags;
@@ -16,6 +22,15 @@ pub use self::flags::KeyFileFlags;
 pub use self::flags::KEY_FILE_NONE;
 pub use self::flags::KEY_FILE_KEEP_COMMENTS;
 pub use self::flags::KEY_FILE_KEEP_TRANSLATIONS;
+pub use self::flags::OptionFlags;
+pub use self::flags::OPTION_FLAG_NONE;
+pub use self::flags::OPTION_FLAG_HIDDEN;
+pub use self::flags::OPTION_FLAG_IN_MAIN;
+pub use self::flags::OPTION_FLAG_REVERSE;
+pub use self::flags::OPTION_FLAG_NO_ARG;
+pub use self::flags::OPTION_FLAG_FILENAME;
+pub use self::flags::OPTION_FLAG_OPTIONAL_ARG;
+pub use self::flags::OPTION_FLAG_NOALIAS;
 
 pub mod functions;
 
