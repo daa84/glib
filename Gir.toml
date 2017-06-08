@@ -10,6 +10,9 @@ generate = [
     "GLib.FormatSizeFlags",
     "GLib.KeyFileError",
     "GLib.KeyFileFlags",
+    "GLib.OptionArg",
+    "GLib.OptionFlags",
+    "GLib.VariantDict",
 ]
 
 ignore = [
